@@ -1,0 +1,57 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
+fastfetch
+
+function fish_greeting
+    echo How can I be of service"?"
+end
+
+function fish_prompt -d "Write out the prompt"
+    # This shows up as USER@HOST /home/user/ >, with the directory colored
+    # $USER and $hostname are set by fish, so you can just use them
+    # instead of using `whoami` and `hostname`
+    printf '%s@%s %s%s%s > ' $USER $hostname \
+        (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
+end
+
+function fish_right_prompt -d "Write out the right prompt"
+    date '+%m-%d-%y/%T'
+end
+
+function multicd
+    echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
+end
+
+function yy
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
+###---------- ARCHIVE EXTRACT ----------###
+
+
+
+
+##------------Make Archives------------##
+
+abbr --add mktar tar -cvf
+abbr --add mkbz2 tar -cvjf
+abbr --add mkgz tar -cvzf
+abbr --add dotdot --regex '^\.\.+$' --function multicd
+abbr --add la lsd -Alh
+abbr --add ls lsd -aFh --color=always
+abbr --add cls clear
+abbr --add up yay -Syu
+abbr --add rm trash -v
+abbr --add ping ping -c 5 8.8.8.8
+abbr --add em emacs
+abbr --add sem sudo emacs
+abbr --add rmd rm -rfv
+abbr --add f sudo find / -iname
+abbr --add myip ip addr show
+abbr --add virsh sudo virsh net-start default
