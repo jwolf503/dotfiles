@@ -1,0 +1,77 @@
+return {
+  "williamboman/mason-lspconfig.nvim",
+  dependencies = {
+    "williamboman/mason.nvim",
+    "neovim/nvim-lspconfig",
+    "hrsh7th/cmp-nvim-lsp",
+  },
+  config = function()
+    local lspconfig = require("lspconfig")
+    local mason_lspconfig = require("mason-lspconfig")
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+    mason_lspconfig.setup_handlers({
+      -- Default handler
+      function(server)
+        lspconfig[server].setup({
+          capabilities = capabilities,
+        })
+      end,
+
+      ["lua_ls"] = function()
+        lspconfig.lua_ls.setup({
+          capabilities = capabilities,
+          settings = {
+            Lua = {
+              diagnostics = { globals = { "vim" } },
+              completion = { callSnippet = "Replace" },
+            },
+          },
+        })
+      end,
+
+      ["svelte"] = function()
+        lspconfig.svelte.setup({
+          capabilities = capabilities,
+          on_attach = function(client)
+            vim.api.nvim_create_autocmd("BufWritePost", {
+              pattern = { "*.js", "*.ts" },
+              callback = function(ctx)
+                client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+              end,
+            })
+          end,
+        })
+      end,
+
+      ["graphql"] = function()
+        lspconfig.graphql.setup({
+          capabilities = capabilities,
+          filetypes = {
+            "graphql",
+            "gql",
+            "svelte",
+            "typescriptreact",
+            "javascriptreact",
+          },
+        })
+      end,
+
+      ["emmet_ls"] = function()
+        lspconfig.emmet_ls.setup({
+          capabilities = capabilities,
+          filetypes = {
+            "html",
+            "css",
+            "scss",
+            "sass",
+            "less",
+            "typescriptreact",
+            "javascriptreact",
+            "svelte",
+          },
+        })
+      end,
+    })
+  end,
+}
