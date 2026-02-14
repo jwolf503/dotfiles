@@ -22,3 +22,5 @@ $ cd dotfiles
 Then use GNU stow to create symlinks
 
 $ stow .
+
+reference vid: Dreams of Autonomy: https://www.youtube.com/watch?v=y6XCebnB9gs 
