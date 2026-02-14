@@ -6,10 +6,23 @@
 
 config_version: 2
 settings:
+  auto_save.session:
+    global: true
   colors.webpage.darkmode.enabled:
     global: true
+  content.geolocation:
+    https://www.homedepot.com: true
+    https://www.zmenu.com: false
   content.notifications.enabled:
     https://www.facebook.com: false
+    https://www.sportskeeda.com: false
+    https://www.youtube.com: false
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: false
+  statusbar.show:
+    global: always
+  tabs.show:
+    global: always
   url.default_page:
     global: https://search.brave.com
   url.searchengines:

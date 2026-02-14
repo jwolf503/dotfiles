@@ -2,13 +2,14 @@
 
 # Set display resolution (uncomment for VM or specific resolution needs)
 #wlr-randr --output Virtual-1 --mode 1920x1080 &
-
+wlr-randr --output eDP-1 --mode 1920x1200@60.000999 --pos 0,0 --transform normal --scale 1.000000 
 # Set wallpaper
-swaybg -i $HOME/Backgrounds/magic.jpg -m fill &
+swaybg -i $HOME/Backgrounds/a_foggy_winter_day.jpg -m fill &
 
 # Startbar
-# qs -c noctalia-shell &
-dms run
+ qs -c noctalia-shell &
+# dms run
+# waybar
 # Polkit authentication agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
@@ -21,3 +22,5 @@ nm-applet &
 # System monitoring
 # conky &
 
+gsettings set org.gnome.desktop.interface cursor-theme "Banana-Blue" &
+gsettings set org.gnome.desktop.interface cursor-size 48 &

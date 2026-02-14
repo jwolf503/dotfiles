@@ -388,7 +388,6 @@ c.fonts.statusbar = '13pt "Source Code Pro"'
 
 # Bindings for normal mode
 config.bind('M', 'hint links spawn mpv {hint-url}')
-#config.bind('Z', 'hint links spawn kitty -e youtube-dl {hint-url}')
 config.bind('Z', 'hint links spawn kitty -e yt-dlp {hint-url}')
 config.bind('t', 'set-cmd-text -s :open -t')
 config.bind('xb', 'config-cycle statusbar.show always never')

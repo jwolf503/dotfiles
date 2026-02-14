@@ -5,55 +5,58 @@ return {
   dependencies = {
     "windwp/nvim-ts-autotag",
   },
-  opts = {
-    highlight = {
-      enable = true,
-    },
-    indent = {
-      enable = true,
-    },
-    autotag = {
-      enable = true,
-    },
-    ensure_installed = {
-      "json",
-      "javascript",
-      "typescript",
-      "tsx",
-      "yaml",
-      "html",
-      "css",
-      "prisma",
-      "markdown",
-      "svelte",
-      "graphql",
-      "bash",
-      "lua",
-      "vim",
-      "dockerfile",
-      "gitignore",
-      "query",
-      "vimdoc",
-      "c",
-      "rust",
-      "csv",
-      "fish",
-      "haskell",
-      "hyprlang",
-      "readline",
-      "toml",
-      "tmux",
-      "yuck",
-      "zig",
-      "go",
-    },
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = "<C-space>",
-        node_incremental = "<C-space>",
-        node_decremental = "<bs>",
+  config = function()
+    local treesitter = require("nvim-treesitter.configs")
+    
+    treesitter.setup({
+      hightlight = {
+        enable = true,
       },
-    },
-  },
+      indent = {enable = true},
+      autotag = {
+        enable = true,
+      },
+      ensure_installed = {
+        "json",
+        "javascript",
+        "typescript",
+        "tsx",
+        "yaml",
+        "html",
+        "css",
+        "prisma",
+        "markdown",
+        "svelte",
+        "graphql",
+        "bash",
+        "lua",
+        "vim",
+        "dockerfile",
+        "gitignore",
+        "query",
+        "vimdoc",
+        "c",
+        "rust",
+        "csv",
+        "fish",
+        "haskell",
+        "hyprlang",
+        "readline",
+        "toml",
+        "tmux",
+        "yuck",
+        "zig",
+        "go",
+      },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-space>", -- set to `false` to disable one of the mappings
+          node_incremental = "<C-space>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
+      },
+    })
+  end,
 }

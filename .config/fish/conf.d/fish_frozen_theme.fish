@@ -8,14 +8,14 @@
 # for appropriate commands to add to ~/.config/fish/config.fish instead.
 # See also the release notes for fish 4.3.0 (run `help relnotes`).
 
-set --global fish_color_autosuggestion 3BA3D0
+set --global fish_color_autosuggestion 8e908c
 set --global fish_color_cancel --reverse
-set --global fish_color_command 0772A1
-set --global fish_color_comment FFE100
+set --global fish_color_command 8959a8
+set --global fish_color_comment eab700
 set --global fish_color_cwd green
 set --global fish_color_cwd_root red
-set --global fish_color_end 8D003B
-set --global fish_color_error EC3B86
+set --global fish_color_end 8959a8
+set --global fish_color_error c82829
 set --global fish_color_escape 00a6b2
 set --global fish_color_history_current --bold
 set --global fish_color_host normal
@@ -25,10 +25,10 @@ set --global fish_color_match --background=brblue
 set --global fish_color_normal normal
 set --global fish_color_operator 00a6b2
 set --global fish_color_option
-set --global fish_color_param 225E79
-set --global fish_color_quote 024A68
-set --global fish_color_redirection 63AFD0
-set --global fish_color_search_match bryellow --background=brblack
+set --global fish_color_param 4271ae
+set --global fish_color_quote 718c00
+set --global fish_color_redirection 3e999f
+set --global fish_color_search_match white --background=brblack
 set --global fish_color_selection white --bold --background=brblack
 set --global fish_color_status red
 set --global fish_color_user brgreen

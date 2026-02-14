@@ -1,6 +1,3 @@
 {
-  "locale": "en",
-  "file_browser": {
-    "show_hidden": true
-  }
+  "theme": "dark"
 }
