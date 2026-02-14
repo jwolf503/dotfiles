@@ -1,0 +1,6 @@
+# Save all videos under YouTube directory in your home directory
+-o ~/YouTube/%(title)s.%(ext)s
+# Faster with aria2
+--downloader aria2c
+# Downloader Args
+--downloader-args '-c -j 10 -x 3 -s 10 -k 1M'
