@@ -29,6 +29,22 @@ zinit snippet OMZP::command-not-found
 # Load completions
 autoload -U compinit && compinit
 
+# Open buffer line in editor
+export EDITOR=nvim
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
+# Suffix Aliases
+alias -s md="$EDITOR"
+alias -s mov="open"
+alias -s png="open"
+alias -s mp4="open"
+alias -s go="$EDITOR"
+alias -s js="$EDITOR"
+alias -s yaml="$EDITOR"
+alias -s json="jq <"
 
 zinit cdreplay -q
 
@@ -37,8 +53,14 @@ zinit cdreplay -q
 
 # Keybinds
 bindkey -e
+bindkey '^[[A' history-search-backward
 bindkey '^p' history-search-backward
+bindkey '^[[B' history-search-forward
 bindkey '^n' history-search-forward
+bindkey '^[w' kill-region
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
 # History
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
@@ -69,3 +91,5 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Extras
 #nitch++
+export PATH="$PATH:/home/jay/.cargo/bin:/home/jay/.local/bin"
+[ -f "/home/jay/.ghcup/env" ] && . "/home/jay/.ghcup/env" # ghcup-env
