@@ -83,7 +83,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Alaises
 source ~/aliases.txt
-
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
@@ -91,5 +90,6 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Extras
 #nitch++
+/home/jay/.cargo/bin/macchina
 export PATH="$PATH:/home/jay/.cargo/bin:/home/jay/.local/bin"
 [ -f "/home/jay/.ghcup/env" ] && . "/home/jay/.ghcup/env" # ghcup-env
