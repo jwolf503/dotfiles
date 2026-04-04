@@ -1,0 +1,56 @@
+theme = "jellybeans"
+
+[editor]
+line-number = "relative"
+scrolloff = 10
+cursorline = true
+cursorcolumn = true
+completion-timeout = 5
+completion-replace = true
+bufferline = "always"
+color-modes = true
+popup-border = "all"
+clipboard-provider = "wayland"
+end-of-line-diagnostics = "hint"
+rulers = [120]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+'`' = '`'
+'<' = '>'
+
+[editor.auto-save]
+after-delay.enable = true
+
+[editor.indent-guides]
+render = true
+character = "|"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-type", "total-line-numbers", "file-encoding"]
+center = []
+right = ["selections", "primary-selection-length", "position", "position-percentage", "spacer", "diagnostics", "workspace-diagnostics", "version-control"]
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+other-lines = "warning"
+
+[keys.normal]
+del = "delete_char_forward"
+backspace = "delete_char_backward"   
