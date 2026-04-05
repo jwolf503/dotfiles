@@ -133,7 +133,7 @@ alias zr='zoxide remove'
 # void aliases
 alias xi='sudo xbps-install'
 alias xu='sudo xbps-install -Su'
-alais xr='sudo xbps-remove'
+alias xr='sudo xbps-remove'
 alias xq='xbps-query -Rs'
 alias xl='xbps-query'
 
