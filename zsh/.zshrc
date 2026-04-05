@@ -30,7 +30,7 @@ zinit snippet OMZP::command-not-found
 autoload -U compinit && compinit
 
 # Open buffer line in editor
-export EDITOR=nvim
+export EDITOR=hx
 
 autoload -Uz edit-command-line
 zle -N edit-command-line
