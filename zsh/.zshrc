@@ -31,6 +31,7 @@ autoload -U compinit && compinit
 
 # Open buffer line in editor
 export EDITOR=hx
+export TERMINAL=kitty
 
 autoload -Uz edit-command-line
 zle -N edit-command-line
@@ -91,5 +92,5 @@ eval "$(zoxide init --cmd cd zsh)"
 # Extras
 #nitch++
 /home/jay/.cargo/bin/macchina
-export PATH="$PATH:/home/jay/.cargo/bin:/home/jay/.local/bin"
+export PATH="$PATH:/home/jay/.cargo/bin:/home/jay/.local/bin:/usr/local/bin"
 [ -f "/home/jay/.ghcup/env" ] && . "/home/jay/.ghcup/env" # ghcup-env
