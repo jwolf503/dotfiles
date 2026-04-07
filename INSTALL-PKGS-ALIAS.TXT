@@ -1,0 +1,13 @@
+#programs needed for aliases.txt to work perfect
+cht.sh
+eza 
+fzf
+netstat
+openssl
+rlwrap 
+trash-cli
+tree 
+zoxide
+xclip
+xdotool
+# get cht.sh from github, rlwrap is a dependancy. or goto cht.sh on your browser.
