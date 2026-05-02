@@ -27,7 +27,8 @@ zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
 # Load completions
-autoload -U compinit && compinit
+autoload -U compinit promptinit && compinit
+promptinit; prompt gentoo
 
 # Open buffer line in editor
 export EDITOR=hx
@@ -61,6 +62,10 @@ bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
+bindkey '^[[3~' delete-char
+bindkey '^H' backward-kill-word
+bindkey '^[[3;5~' kill-word
+WORDCHARS='*?_[]~=&; !#$%^(){}<>'
 
 # History
 HISTSIZE=10000
@@ -74,6 +79,9 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+setopt correctall
+setopt autocd
+setopt extendedglob
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -81,6 +89,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':completion::complete:*' use-cache 1
 
 # Alaises
 source ~/aliases.txt
